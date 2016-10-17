@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20161017190404) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "usnername"
+    t.string   "username"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
