@@ -12,10 +12,27 @@
 
 ActiveRecord::Schema.define(version: 20161017190404) do
 
+  create_table "followers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "self"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "category"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "usnername"
+    t.string   "username"
     t.string   "password"
+    t.integer  "followed_id"
+    t.integer  "follower_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -11,6 +11,13 @@
     *zoom: 1;
 }
 
+#follo {
+
+	position: relative;
+	left: 500px;
+	bottom: 300px;
+}
+
 /* Basic Styles */
 
 
