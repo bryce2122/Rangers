@@ -113,3 +113,14 @@ post '/users/follow' do
 erb :user
 
 end
+
+post '/sample' do
+	@a = params["data_value"];
+	@sample = Sample.create(list: @a, user_id: session[:id]);
+
+end
+
+
+
+
+

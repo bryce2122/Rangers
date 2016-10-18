@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20161017190404) do
     t.datetime "updated_at"
   end
 
+  create_table "samples", force: :cascade do |t|
+    t.string   "list"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "username"
