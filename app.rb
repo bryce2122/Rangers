@@ -19,8 +19,25 @@ get '/users/:id' do
 
 @user = User.find_by_id(session[:id])
 
-
+@s = session[:id]
 @s.to_s == params[:id]
+@b = params[:id]
+@all = Post.where(user_id: @b)
+@self = Follower.where(self: session[:id])
+
+@array = []
+
+@self.each do |s|
+	@array.push(s.user_id)
+
+end
+@m = []
+for i in 1..@array.length
+	l = @array[i]
+	yes = Post.where(user_id: @array[i])
+	@m.push(yes)
+end
+
 erb :user
 end
 
@@ -42,7 +59,7 @@ post '/sign' do
 	else
 
 
-	@user = User.new(email: params["email"],username: params["username"], password: params["password"])
+	@user = User.new(email: params["email"],username: params["username"], password: params["password"], followed_id: 1)
 	@user.save
 
 	session[:id] = @user.id
@@ -67,7 +84,32 @@ else
 	flash[:miss] = "Your username or password was incorrect. Please try again."
 	redirect :login;
 
+	end
+
+
+	end
+
+
+
+post '/micro' do 
+	@user = User.find_by_id(session[:id])
+	session[:id] = @user.id
+	@s = session[:id]
+	@post = Post.new(params)
+	@post.user = @user
+	@post.save
+
+
+	redirect '/users/' + @s.to_s 
+
 end
 
+post '/users/follow' do
+@f = params["data_value"].to_i
+@user = User.find_by_id(@f)
+@follow = Follower.new(self: session[:id])
+	@follow.user = @user
+	@follow.save
+erb :user
 
 end

@@ -1,1 +1,55 @@
+<link rel="stylesheet" type="text/css" href="<%= url("/user.css")%>">
+
+
+
+<h1> Welcome <%=@b%></h1>
+
+
+<%if @b == @s.to_s%>
 <h1> Welcome <%=@user.username%></h1>
+
+
+<form method = "POST" action="/micro" id="usrform">
+  Name: <input type="text" name="category">
+  <input type="submit">
+</form>
+
+<textarea name="content" maxlength="50" form="usrform">Enter text here...</textarea>
+<%end%>
+</h1>Your Posts</h1>
+<%if @all%>
+<%@all.each do |a| %>
+
+<p><%=a.content%></p>
+
+<%end%>
+<%end%>
+
+
+<%if @b == @s.to_s%>
+<div id="follo">
+<!-- <h1><%=@array%></h1> -->
+<h1>Posts of people you follow</h1>
+<%fl = @m.flatten(1)%>
+<%fl.each do |o|%>
+
+<p><%=o.content%></p>
+<%end%>
+
+</div>
+<%end%>
+
+
+<%if @b != @s.to_s %>
+<button id="f">Follow</button>
+<%=@f%>
+<%end%>
+<script>
+$("#f").click(function() {
+var a = window.location.href.split("/");
+var b = a[a.length - 1]
+console.log(b);
+$.ajax({url : "/users/follow", type : "post", data : {data_value: (b) }});
+});
+
+</script>
