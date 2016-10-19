@@ -13,7 +13,7 @@ require './models'
 
 $menu = [
 	    {page: 'Home', href: '/'},
-	    {page: 'Profile', href: '/profile'},
+	    {page: 'Profile', href: '/user'},
 	    {page: 'Account', href: '/account'},
 	    {page: 'Feed', href: '/feed'},
 	    {page: 'Teammates', href: '/teammates'},

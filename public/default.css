@@ -22,7 +22,7 @@
 
 
 body {
-	background: URL("ice-background.jpg") no-repeat center center fixed;
+	background: URL("ice-background.jpg");
 	background-size: 100%;
 }
 
@@ -36,6 +36,7 @@ body {
 }
 .logo {
 	border-radius: 50%;
+	height: 250px;
 	display: block;
 	margin: 0 auto;
 	box-shadow: 7px 7px 5px black;
@@ -83,6 +84,13 @@ nav a:hover, nav a:active {
 }
 nav a#pull {
 	display: none;
+}
+#s {
+	text-align: center;
+}
+#signup {
+	position: relative;
+	text-align: center;
 }
 
 /*Styles for screen 600px and lower*/
