@@ -10,7 +10,7 @@
   <script src="main.js"></script>
 
   <!-- STYLE -->
-<link rel="stylesheet" href="default.css" />
+<link rel="stylesheet" type="text/css" href="<%= url("/user.css")%>">
 
   <!-- FONTS -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet'>
@@ -23,7 +23,7 @@
   <nav class="clearfix">
     <ul class="clearfix">
       <li><a href="/">Home</a></li>
-      <li><a href="/user">View Profile</a></li>
+      <li><a href="/users/<%@b%>"> View Profile</a></li>
       <li><a href="/account">Account</a></li>
       <li><a href="/feed">Feed</a></li>
       <li><a href="/teammates">Teammates</a></li>

@@ -13,7 +13,7 @@ require './models'
 
 $menu = [
 	    {page: 'Home', href: '/'},
-	    {page: 'Profile', href: '/user'},
+	    {page: 'Profile', href: '/users/'},
 	    {page: 'Account', href: '/account'},
 	    {page: 'Feed', href: '/feed'},
 	    {page: 'Teammates', href: '/teammates'},
@@ -32,7 +32,7 @@ end
 get '/users/:id' do
 
 @user = User.find_by_id(session[:id])
-
+@b = 7
 @s = session[:id]
 @s.to_s == params[:id]
 @b = params[:id]
