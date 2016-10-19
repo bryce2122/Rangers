@@ -26,14 +26,23 @@ body {
 	background-size: 100%;
 }
 
-#main_title {
+.main_title {
 	font-family: 'Audiowide', cursive;
 	text-align: center;
 	color: red;
 	text-shadow: 2px 2px black;
 	font-size: 60px;
 	margin-bottom: 0;
+    animation: glow 1.5s infinite alternate;
 }
+
+@keyframes glow {
+    to {
+        text-shadow: 0 0 10px white;
+    }
+}
+
+
 .logo {
 	border-radius: 50%;
 	height: 250px;
