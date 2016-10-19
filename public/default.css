@@ -85,12 +85,19 @@ nav a:hover, nav a:active {
 nav a#pull {
 	display: none;
 }
-#s {
+
+#info {
+	display: inline-block;
 	text-align: center;
 }
+
 #signup {
-	position: relative;
 	text-align: center;
+}
+
+#signup_h1 {
+	color: red;
+	font-family: 'Audiowide', cursive
 }
 
 /*Styles for screen 600px and lower*/
