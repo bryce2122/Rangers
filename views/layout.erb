@@ -23,7 +23,9 @@
   <nav class="clearfix">
     <ul class="clearfix">
       <li><a href="/">Home</a></li>
-      <li><a href="/users/<%@b%>"> View Profile</a></li>
+      <% if session[:id] %>
+      <li><a href="/users/<%= session[:id] %>"> View Profile</a></li>
+      <% end %>
       <li><a href="/account">Account</a></li>
       <li><a href="/feed">Feed</a></li>
       <li><a href="/teammates">Teammates</a></li>
