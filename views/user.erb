@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<%= url("/user.css")%>">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
@@ -22,7 +23,7 @@
 <%if @all%>
 <%@all.each do |a| %>
 
-<p><%=a.content%></p>
+<p class="con"><%=a.content%></p>
 
 <%end%>
 <%end%>
@@ -71,14 +72,14 @@ function init() {
   	});}
 
 $('#box').droppable({
-
 	 drop: function(e, ui){  
+	 	console.log("pleaaaase",e)
         $(ui.draggable).clone().appendTo($(this)); }
 
 });
 
 function alertme() {
-
+console.log($('#box').text())
 arr.push($('#box').text() + "ss");
 console.log(arr);
 $('#box').empty();

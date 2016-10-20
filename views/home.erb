@@ -27,6 +27,10 @@
   </form>
 
 <a href="/login"> Login </a>
+  <%if flash[:update]%>
+  <h1><%=flash[:update]%></h1>
+  <%end%>
+
 
 <script>
 var email = ""; 

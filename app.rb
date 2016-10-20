@@ -72,6 +72,15 @@ get '/login' do
 end
 
 
+get '/account' do
+
+    erb :account
+
+
+
+end
+
+
 
 get '/signout' do
 	session.clear
@@ -160,7 +169,34 @@ post '/sample' do
 
 end
 
+post '/samplefollow' do
 
 
+    @f = params["data_value"].to_i
+    @user = User.find_by_id(@f)
+@follow = Follower.new(self: session[:id])
+@follow.user = @user
+@follow.save
+
+
+end
+
+post '/update' do
+
+    @user = User.find_by_id(session[:id])
+
+    @user.update_attributes(params)
+    flash[:update] = "your account has been updated"
+    redirect :account
+end
+
+
+get '/delete' do
+
+
+    User.find_by_id(session[:id]).destroy
+     flash[:update] = "your account has been deleted"
+     redirect :/
+ end
 
 
