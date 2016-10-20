@@ -30,7 +30,7 @@ end
 
 create_table :samples do |s|
 
-	s.string :list
+	s.text :list
 	s.integer :user_id
 	s.datetime :created_at
    s.datetime :updated_at

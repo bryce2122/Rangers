@@ -16,7 +16,7 @@
   <input type="submit">
 </form>
 
-<textarea name="content" maxlength="200" form="usrform">Enter text here...</textarea>
+<textarea name="content"  form="usrform">Enter text here...</textarea>
 <%end%>
 </h1>Your Posts</h1>
 <%if @all%>
@@ -79,7 +79,7 @@ $('#box').droppable({
 
 function alertme() {
 
-arr.push($('#box').text());
+arr.push($('#box').text() + "ss");
 console.log(arr);
 $('#box').empty();
 }

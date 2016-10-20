@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20161017190404) do
   end
 
   create_table "samples", force: :cascade do |t|
-    t.string   "list"
+    t.text     "list"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

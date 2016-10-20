@@ -10,10 +10,33 @@ configure :development do
 end 
 require './models'
 
+
+$menu = [
+	    {page: 'Home', href: '/'},
+	    {page: 'Profile', href: '/profile'},
+	    {page: 'Account', href: '/account'},
+	    {page: 'Feed', href: '/feed'},
+	    {page: 'Teammates', href: '/teammates'},
+	    {page: 'Sign Out', href: '/sign_out'}
+  	]
+
+  get '/' do 
+ 	erb :home
+ end
+
 get '/' do
 	erb :home
 
 end
+
+get '/feed' do
+
+	@p = Post.all
+	erb :feed
+
+end
+
+
 
 get '/users/:id' do
 
@@ -32,7 +55,7 @@ get '/users/:id' do
 
 end
 @m = []
-for i in 1..@array.length
+for i in 0..@array.length
 	l = @array[i]
 	yes = Post.where(user_id: @array[i])
 	@m.push(yes)
@@ -45,6 +68,23 @@ end
 get '/login' do
 
 	erb :login
+
+end
+
+
+
+get '/signout' do
+	session.clear
+	
+	redirect :/
+	flash[:confirm] = "you are signed out"
+end
+
+
+get '/sample' do
+	@samp = Sample.all
+
+	erb :sample
 
 end
 
