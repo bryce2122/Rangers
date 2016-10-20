@@ -1,13 +1,14 @@
 
-<h1 id="signup_h1">Current Post Feed:</h1>
-
+<h1 id="feed_h1">Current Post Feed:</h1>
+<div id="col_feed">
 <%if @p %>
 
-<%@p.each do |p|%>
-<div id="col_feed">
-<p id="feed"><%=p.content%></p>
+<%@p.reverse.each do |p|%>
+<p><%=p.content%></p>
+<%end%>
+<%end%>
 </div>
 
-<%end%>
 
-<%end%>
+<!-- <div id="col_feed">
+<p id="feed"> -->

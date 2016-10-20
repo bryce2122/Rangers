@@ -17,7 +17,7 @@ $menu = [
 	    {page: 'Account', href: '/account'},
 	    {page: 'Feed', href: '/feed'},
 	    {page: 'Teammates', href: '/teammates'},
-	    {page: 'Sign Out', href: '/sign_out'}
+	    {page: 'Sign Out', href: '/signout'}
   	]
 
   get '/' do 
@@ -75,7 +75,6 @@ end
 
 get '/signout' do
 	session.clear
-	
 	redirect :/
 	flash[:confirm] = "you are signed out"
 end
