@@ -1,9 +1,3 @@
-#follo {
-	position: absolute;
-	left: 500px;
-	bottom: 300px;
-}
-
 /* Clearfix */
 .clearfix:before,
 .clearfix:after {
@@ -16,7 +10,6 @@
 .clearfix {
     *zoom: 1;
 }
-/* Content Styling*/
 
 #follo {
 
@@ -25,61 +18,24 @@
 	bottom: 300px;
 }
 
-
-#box {
-
-	width: 300px;
-	border: 5px solid red;
-	position: absolute;
-	left: 500px;
-	bottom: 300px;
-	height: 200px;
-	text-align: center
-}
-
-/* feed page */
-
-#feed {
-	font-size: 14px;
-	font-family: 'Droid Sans', sans-serif;
-}
-
-#col_feed {
-	column-width: 240px;
-	column-count: 2;
-}
 /* Basic Styles */
 
-#sub {
-	background-color: blue;
-	color: white;
-	width: 90px;
-}
+
 body {
-	background: URL("ice-background.jpg");
+	background: URL("ice-background.jpg") no-repeat center center fixed;
 	background-size: 100%;
 }
 
-.main_title {
+#main_title {
 	font-family: 'Audiowide', cursive;
 	text-align: center;
 	color: red;
 	text-shadow: 2px 2px black;
 	font-size: 60px;
 	margin-bottom: 0;
-    animation: glow 1.5s infinite alternate;
 }
-
-@keyframes glow {
-    to {
-        text-shadow: 0 0 10px white;
-    }
-}
-
-
 .logo {
 	border-radius: 50%;
-	height: 250px;
 	display: block;
 	margin: 0 auto;
 	box-shadow: 7px 7px 5px black;
@@ -129,25 +85,6 @@ nav a#pull {
 	display: none;
 }
 
-#info {
-	display: inline-block;
-	text-align: center;
-}
-
-#signup {
-	text-align: center;
-}
-
-#signup_h1 {
-	color: red;
-	font-family: 'Audiowide', cursive;
-	text-shadow: 1px 1px black;
-}
-
-textarea { 
-height: 80px;
- }
-
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 600px) {
 	nav { 
@@ -172,9 +109,6 @@ height: 80px;
 	  	width: 100%;
 	  	text-indent: 25px;
   	}
-  	.main_title {
-		font-size: 45px;
-	}
 }
 
 /*Styles for screen 515px and lower*/
@@ -202,17 +136,10 @@ height: 80px;
 		right: 15px;
 		top: 10px;
 	}
-	.main_title {
-		font-size: 30px;
-	}
 }
 
 /*Smartphone*/
 @media only screen and (max-width : 320px) {
-
-	.main_title {
-		font-size: 30px;
-	}
 	nav li {
 		display: block;
 		float: none;
@@ -223,7 +150,16 @@ height: 80px;
 	}
 }
 
+.purplebloated {
+
+      border: 5px solid red;
+      height: 150px;
+      text-align: center;
 
 
+}
 
+.s{
 
+	display: none;
+}

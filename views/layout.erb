@@ -6,7 +6,8 @@
 
   <!-- JS & JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="main.js"></script>
 
   <!-- STYLE -->
@@ -15,8 +16,9 @@
   <!-- FONTS -->
 <link href="https://fonts.googleapis.com/css?family=Audiowide|Russo+One" rel="stylesheet"> 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/default.css">
+
 </head>
 <body>
   <nav class="clearfix">
@@ -29,24 +31,25 @@
       <li><a href="/feed">Feed</a></li>
       <li><a href="/teammates">Teammates</a></li>
       <li><a href="/sign_out">Sign Out</a></li>  
+
     </ul>
     <a href="#" id="pull">Menu</a>
   </nav>
 
+
         <% $menu.each do |item| %>
         <% end %>
       
-  <!-- Time to Yield! -->
+  
   <%= yield %>
-  <!-- Back from Yield, didn't even break a sweat -->
+  
 <%if flash[:error] %>
 <h1><%=flash[:error]%></h1>
 <%end%>
+
+<%if flash[:confirm] %>
+<h1><%=flash[:confirm]%></h1>
+<%end%>
+
 </body>
 </html>
- 
-
-
-
-
-

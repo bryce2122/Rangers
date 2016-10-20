@@ -29,6 +29,15 @@ get '/' do
 
 end
 
+get '/feed' do
+
+	@p = Post.all
+	erb :feed
+
+end
+
+
+
 get '/users/:id' do
 
 @user = User.find_by_id(session[:id])
@@ -46,7 +55,7 @@ get '/users/:id' do
 
 end
 @m = []
-for i in 1..@array.length
+for i in 0..@array.length
 	l = @array[i]
 	yes = Post.where(user_id: @array[i])
 	@m.push(yes)
@@ -59,6 +68,23 @@ end
 get '/login' do
 
 	erb :login
+
+end
+
+
+
+get '/signout' do
+	session.clear
+	
+	redirect :/
+	flash[:confirm] = "you are signed out"
+end
+
+
+get '/sample' do
+	@samp = Sample.all
+
+	erb :sample
 
 end
 
@@ -127,3 +153,14 @@ post '/users/follow' do
 erb :user
 
 end
+
+post '/sample' do
+	@a = params["data_value"];
+	@sample = Sample.create(list: @a, user_id: session[:id]);
+
+end
+
+
+
+
+

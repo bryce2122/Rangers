@@ -11,3 +11,7 @@ end
 class Follower < ActiveRecord::Base
   belongs_to :user
 end
+
+class Sample < ActiveRecord::Base
+
+	end

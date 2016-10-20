@@ -1,0 +1,13 @@
+
+<h1 id="signup_h1">Current Post Feed:</h1>
+
+<%if @p %>
+
+<%@p.each do |p|%>
+<div id="col_feed">
+<p id="feed"><%=p.content%></p>
+</div>
+
+<%end%>
+
+<%end%>

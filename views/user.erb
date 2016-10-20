@@ -1,9 +1,10 @@
 <link rel="stylesheet" type="text/css" href="<%= url("/user.css")%>">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+ 
 
 
-
-<h3> Welcome <%=@b%></h3>
-
+<h3> You are user #<%=@b%></h3>
 
 <%if @b == @s.to_s%>
 <h1 id="signup_h1"> Welcome <%=@user.username%>!</h1>
@@ -15,7 +16,7 @@
   <input type="submit">
 </form>
 
-<textarea name="content" maxlength="50" form="usrform">Enter text here...</textarea>
+<textarea name="content"  form="usrform">Enter text here...</textarea>
 <%end%>
 <br />
 </h1>Your Posts</h1>
@@ -31,11 +32,11 @@
 <%if @b == @s.to_s%>
 <div id="follo">
 <!-- <h1><%=@array%></h1> -->
-<h1>Posts of people you follow</h1>
+<h1>Posts of people you follow:</h1>
 <%fl = @m.flatten(1)%>
 <%fl.each do |o|%>
 
-<p><%=o.content%></p>
+<p class="con"><%=o.content + " " + o.category%></p>
 <%end%>
 
 </div>
@@ -46,7 +47,54 @@
 <button id="f">Follow</button>
 <%=@f%>
 <%end%>
-<script>
+
+
+<div id="box">
+
+
+<p id ="c"></p>
+
+
+</div>
+
+<button id="create">Create</button>
+
+<script type="text/javascript">
+var arr = [];
+$( init );
+ 
+function init() {
+  $('.con').draggable({
+
+  	cursor: 'move',
+  	helper: 'clone',
+  	stop: alertme
+  	});}
+
+$('#box').droppable({
+
+	 drop: function(e, ui){  
+        $(ui.draggable).clone().appendTo($(this)); }
+
+});
+
+function alertme() {
+
+arr.push($('#box').text() + "ss");
+console.log(arr);
+$('#box').empty();
+}
+
+$(document).ready(function() {
+
+var ru = $("#w").text();
+
+alert(ru);
+ var map = $(".con").map(function() {
+    return $(this).text();
+});
+
+alert(map[0]);
 $("#f").click(function() {
 var a = window.location.href.split("/");
 var b = a[a.length - 1]
@@ -54,4 +102,57 @@ console.log(b);
 $.ajax({url : "/users/follow", type : "post", data : {data_value: (b) }});
 });
 
+var i = -1;
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+       
+       if(i == 0) {
+
+      $("#c").text("Collection");
+
+       }
+
+       else {
+
+       i--;
+       $("#c").text(map[i]);}
+      
+        break;
+
+        case 38: // up
+        break;
+
+        case 39: // right
+        if(i == map.length - 1){
+
+        }
+        else {
+        i++;
+        $("#c").text(map[i]);}
+        
+        break;
+
+        case 40: // down
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+
+$("#create").click(function(){
+
+$.ajax({
+              url : "/sample",
+              type : "post",
+              data : { data_value: JSON.stringify(arr) },
+            });
+
+
+});
+
+
+});
 </script>

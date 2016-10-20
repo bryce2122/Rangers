@@ -1,0 +1,131 @@
+
+
+<%if @samp %>
+
+ <%@samp.each do |s| %>
+
+ <p class="s"><%=s.list.gsub(/\\n|\[|\]|\"|,/, "") + "llll" %></p>
+ <%end%>
+ <%end%> 
+
+
+
+
+ <script>
+
+$(document).ready(function() {
+var id = "";
+var arr = [];
+var index = "";
+var n = -1;
+var a = $('.s').text().split("llll");
+alert(a[0]);
+
+for(i = 0;i<a.length; i++) {
+
+var b  = a[i].split("ss");
+
+arr.push(b);
+
+console.log(arr);
+
+
+}
+
+alert(arr[1][3]);
+
+var k = arr.map(function(c) {
+
+ return c.filter(function(b) {
+
+
+
+ return /[a-zA-Z]+/.test(b);
+
+});
+
+}).filter(function(c) {
+	return c.length;
+});
+
+console.log(k);
+
+for(i = 0; i<k.length;i++) {
+
+$('body').append(
+  $('<div/>')
+    .attr("id",  i.toString())
+    .addClass( "purplebloated")
+    .append("<span/>")
+      .text(k[i][0])
+);
+
+}
+
+$( ".purplebloated" ).attr('tabindex',-1).focus(function() {
+  
+	id = $(this).attr('id');
+ 	index = parseInt(id);
+ 	console.log(id);
+ 	n = -1;
+});
+
+
+
+
+$('body').keydown(function(e) {
+	console.log( id );
+    switch(e.which) {
+        case 37: // left
+       n--;
+       $("#"+id).text(k[index][n]);
+       	console.log( "#"+id )
+      	console.log( $("#"+id).css('width') )
+        break;
+
+        case 38: // up
+      
+
+        break;
+
+        case 39: // right
+       console.log("right");
+       	n++;
+       
+        $("#"+id).text(k[index][n]);
+        break;
+
+        case 40: // down
+       console.log("down");
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
+ </script>
