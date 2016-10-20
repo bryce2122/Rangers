@@ -27,7 +27,11 @@
 
 /* Basic Styles */
 
-
+#sub {
+	background-color: blue;
+	color: white;
+	width: 90px;
+}
 body {
 	background: URL("ice-background.jpg");
 	background-size: 100%;
@@ -113,8 +117,13 @@ nav a#pull {
 
 #signup_h1 {
 	color: red;
-	font-family: 'Audiowide', cursive
+	font-family: 'Audiowide', cursive;
+	text-shadow: 1px 1px black;
 }
+
+textarea { 
+height: 80px;
+ }
 
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 600px) {
@@ -140,6 +149,9 @@ nav a#pull {
 	  	width: 100%;
 	  	text-indent: 25px;
   	}
+  	.main_title {
+		font-size: 45px;
+	}
 }
 
 /*Styles for screen 515px and lower*/
@@ -167,10 +179,17 @@ nav a#pull {
 		right: 15px;
 		top: 10px;
 	}
+	.main_title {
+		font-size: 30px;
+	}
 }
 
 /*Smartphone*/
 @media only screen and (max-width : 320px) {
+
+	.main_title {
+		font-size: 30px;
+	}
 	nav li {
 		display: block;
 		float: none;

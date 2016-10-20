@@ -2,11 +2,12 @@
 
 
 
-<h1> Welcome <%=@b%></h1>
+<h3> Welcome <%=@b%></h3>
 
 
 <%if @b == @s.to_s%>
-<h1> Welcome <%=@user.username%></h1>
+<h1 id="signup_h1"> Welcome <%=@user.username%>!</h1>
+<hr />
 
 
 <form method = "POST" action="/micro" id="usrform">
@@ -16,6 +17,7 @@
 
 <textarea name="content" maxlength="50" form="usrform">Enter text here...</textarea>
 <%end%>
+<br />
 </h1>Your Posts</h1>
 <%if @all%>
 <%@all.each do |a| %>
