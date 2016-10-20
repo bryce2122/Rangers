@@ -16,7 +16,7 @@ $menu = [
 	    {page: 'Profile', href: '/users/'},
 	    {page: 'Account', href: '/account'},
 	    {page: 'Feed', href: '/feed'},
-	    {page: 'Teammates', href: '/teammates'},
+	    {page: 'Teammates', href: '/sample'},
 	    {page: 'Sign Out', href: '/signout'}
   	]
 
@@ -30,12 +30,13 @@ get '/' do
 end
 
 get '/feed' do
-
+	if session[:id]
 	@p = Post.all
 	erb :feed
-
+else
+	redirect :/
 end
-
+end
 
 
 get '/users/:id' do
@@ -81,11 +82,18 @@ end
 
 
 get '/sample' do
+	
+if session[:id]
 	@samp = Sample.all
 
 	erb :sample
 
+else 
+	redirect :/
 end
+
+end
+
 
 
 post '/sign' do

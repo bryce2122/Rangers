@@ -5,10 +5,9 @@
 
 
 <h3> You are user #<%=@b%></h3>
-
+<hr />
 <%if @b == @s.to_s%>
 <h1 id="signup_h1"> Welcome <%=@user.username%>!</h1>
-<hr />
 
 
 <form method = "POST" action="/micro" id="usrform">
