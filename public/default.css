@@ -161,5 +161,9 @@ nav a#pull {
 
 .s{
 
-	display: none;
+	
+}
+
+body {
+	font-family:  'Open Sans Condensed', sans-serif;
 }

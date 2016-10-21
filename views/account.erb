@@ -1,0 +1,27 @@
+<form id= "s" method="POST" action="/update">
+    <table>
+      <tr>
+       <tr>
+         <td><label for="username">Username</label></td>
+        <td><input id="u" name="username" type="text" placeholder="Enter your username" /></td>
+        </tr>
+        <td><label for="email">Email</label></td>
+        <td><input id="e" name="email" type="text" placeholder="Enter your username" /></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password</label></td>
+        <td><input id="p" name="password" type="password" placeholder="Enter your password" /></td>
+      </tr>
+      <tr>
+        <td id="submit" colspan="2"><input id="sub" type="submit" /></td>
+      </tr>
+    </table>
+  </form>
+
+
+  <%if flash[:update]%>
+  <h1><%=flash[:update]%></h1>
+  <%end%>
+
+
+  <a href="/delete">Delete</a>

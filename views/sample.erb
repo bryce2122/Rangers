@@ -1,10 +1,10 @@
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
 <%if @samp %>
 
  <%@samp.each do |s| %>
 
- <p class="s"><%=s.list.gsub(/\\n|\[|\]|\"|,/, "") + "llll" %></p>
+ <p class="s"><%=s.user_id.to_s + s.list.gsub(/\\n|\[|\]|\"|,/, "") + "llll" %></p>
  <%end%>
  <%end%> 
 
@@ -19,6 +19,9 @@ var arr = [];
 var index = "";
 var n = -1;
 var a = $('.s').text().split("llll");
+var q = 0;
+var y ="";
+var ql = 0;
 alert(a[0]);
 
 for(i = 0;i<a.length; i++) {
@@ -67,7 +70,10 @@ $( ".purplebloated" ).attr('tabindex',-1).focus(function() {
 	id = $(this).attr('id');
  	index = parseInt(id);
  	console.log(id);
- 	n = -1;
+ 	n = 0;
+ 	q = 0;
+ 	ql = 0;
+    console.log(k[index].length);
 });
 
 
@@ -77,21 +83,57 @@ $('body').keydown(function(e) {
 	console.log( id );
     switch(e.which) {
         case 37: // left
-       n--;
+      
+       if(n > 0) {
+       n--;}
+       console.log(n);
        $("#"+id).text(k[index][n]);
-       	console.log( "#"+id )
-      	console.log( $("#"+id).css('width') )
+       
+      	
         break;
 
         case 38: // up
-      
+     
+
+
+
+var l = $("#"+id).find("h1").length
+console.log("this is the length" + l);
+   if(l == 0) {
+
+    y = $("<h1> Following</h1>").appendTo("#"+id);
+    ql++;
+}
+
+     if(ql == 1)  {
+
+        $("#"+id).fadeOut();
+
+        var user = (k[index][0].charAt(0));
+
+
+
+        $.ajax({
+               url : "/samplefollow",
+               type : "post",
+              data : { data_value: user },
+            });
+
+
+
+     } 
+
+
 
         break;
 
         case 39: // right
        console.log("right");
-       	n++;
+       	if(n < k[index].length - 1) {
+
+       	n++;}
        
+        console.log(n);
         $("#"+id).text(k[index][n]);
         break;
 
@@ -105,27 +147,5 @@ $('body').keydown(function(e) {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
  </script>
