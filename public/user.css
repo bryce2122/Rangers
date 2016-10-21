@@ -1,6 +1,6 @@
 #follo {
 	position: absolute;
-	left: 500px;
+	left: 100px;
 	bottom: 300px;
 }
 
@@ -21,7 +21,7 @@
 #follo {
 
 	position: relative;
-	left: 500px;
+	
 	bottom: 300px;
 }
 
@@ -30,7 +30,7 @@
 
 	width: 1000px;
 	
-	position: absolute;
+	position: fixed;
 	left: 1020px;
 	bottom: 410px;
 	height: 200px;
@@ -39,6 +39,8 @@
 
 	clear: both;
 	border-radius: 15px;
+    z-index: 1;
+    top: 25px;
 }
 
 /* feed page */
@@ -234,7 +236,7 @@ height: 80px;
 
 #goal{
 
-    width: 200px;
+    width: 100px;
     position: relative;
     right: 275px;
 }
@@ -264,9 +266,109 @@ float: left;
 
 }
 
+
+#create{
+    z-index: 1;
+}
+#create:hover{
+
+    color: blue;
+}
+
+#p {
+
+    position: relative;
+    top: 400px;
+}
+
+#con {
+
+
+    position: relative;
+    top: 400px;
+
+}
+
+#text {
+
+    width: 25%;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    left: 500px;
+    bottom: 100px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+}
+
+
+#form {
+
+    width: 200px;
+    position: relative;
+    left: 520px;
+    top: 50px;
+
+
+
+}
+
+#m {
+
+    position: relative;
+    left: 550px;
+    bottom: 75px;
+}
+
+/* Glyph, by Harry Roberts */
+
+hr {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: blue;
+    text-align: center;
+}
+hr:after {
+    content: "R";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+#your {
+
+    position: relative;
+    left: 300px;
+    top: 90px;
+}
+
+
+#qw {
+
+    position: relative;
+    top:90px;
+    left:320px;
+
+}
+
+#but {
+
+    width: 300px;
+    background-color: red;
+    color: white;
+
+}
+
 #create {
 
-    color: white;
+position: absolute;
+bottom: 400px;
+left: 1190px;
+
 }
 
 #create:hover{
