@@ -1,5 +1,6 @@
 <form id= "s" method="POST" action="/update">
 <h1 id="signup_h1">Please Enter the Date You Wish To Update</h1>
+<img class="logo_sm" src="logo.jpg" />
     <table>
       <tr>
        <tr>
@@ -21,8 +22,9 @@
 
 
   <%if flash[:update]%>
-  <h1><%=flash[:update]%></h1>
+  <h1 id="flash_h1"><%=flash[:update]%></h1>
   <%end%>
+<hr />
 <h1 id="signup_h1">Click Below to Delete Your Account</h1>
 <form action="/delete">
   <td id="submit" colspan="2"><input id="sub" value="Delete" type="submit"/></td>

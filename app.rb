@@ -197,13 +197,12 @@ post '/update' do
     @user = User.find_by_id(session[:id])
 
     @user.update_attributes(params)
-    flash[:update] = "your account has been updated"
+    flash[:update] = "Your account has been updated!!"
     redirect :account
 end
 
 
-get '/delete' do
-
+post '/delete' do
 
     User.find_by_id(session[:id]).destroy
      flash[:update] = "your account has been deleted"
