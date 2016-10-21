@@ -13,11 +13,11 @@ require './models'
 
 $menu = [
 	    {page: 'Home', href: '/'},
-	    {page: 'Profile', href: '/profile'},
+	    {page: 'Profile', href: '/users/'},
 	    {page: 'Account', href: '/account'},
 	    {page: 'Feed', href: '/feed'},
-	    {page: 'Teammates', href: '/teammates'},
-	    {page: 'Sign Out', href: '/sign_out'}
+	    {page: 'Teammates', href: '/sample'},
+	    {page: 'Sign Out', href: '/signout'}
   	]
 
   get '/' do 
@@ -30,18 +30,19 @@ get '/' do
 end
 
 get '/feed' do
-
+	if session[:id]
 	@p = Post.all
 	erb :feed
-
+else
+	redirect :/
 end
-
+end
 
 
 get '/users/:id' do
 
 @user = User.find_by_id(session[:id])
-
+@b = 7
 @s = session[:id]
 @s.to_s == params[:id]
 @b = params[:id]
@@ -74,8 +75,12 @@ end
 
 get '/account' do
 
-    erb :account
+    if session[:id]
 
+    erb :account
+else
+    redirect :/
+end
 
 
 end
@@ -84,18 +89,24 @@ end
 
 get '/signout' do
 	session.clear
-	
 	redirect :/
 	flash[:confirm] = "you are signed out"
 end
 
 
 get '/sample' do
+	
+if session[:id]
 	@samp = Sample.all
 
 	erb :sample
 
+else 
+	redirect :/
 end
+
+end
+
 
 
 post '/sign' do

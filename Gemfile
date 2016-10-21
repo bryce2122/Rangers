@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem "sinatra"
-gem 'activerecord'
+gem 'activerecord', '~>4'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
 gem 'rake'

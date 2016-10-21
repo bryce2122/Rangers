@@ -6,37 +6,33 @@
 
   <!-- JS & JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="main.js"></script>
 
   <!-- STYLE -->
-<link rel="stylesheet" href="default.css" />
+<link rel="stylesheet" type="text/css" href="<%= url("/user.css")%>">
 
   <!-- FONTS -->
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet'>
-<link href="https://fonts.googleapis.com/css?family=Audiowide|Russo+One" rel="stylesheet">
-
-</head>
-<body>
- 
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Russo+One" rel="stylesheet"> 
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/default.css">
+
 </head>
 <body>
-
-
-
-
-<h1>Test</h1><body>
   <nav class="clearfix">
     <ul class="clearfix">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">View Profile</a></li>
+
+      <li><a href="/">Home</a></li>
+      <% if session[:id] %>
+      <li><a href="/users/<%= session[:id] %>"> View Profile</a></li>
+      <% end %>
       <li><a href="/account">Account</a></li>
-      <li><a href="#">Feed</a></li>
-      <li><a href="#">Teammates</a></li>
+      <li><a href="/feed">Feed</a></li>
+      <li><a href="/sample">Teammates</a></li>
       <li><a href="/signout">Sign Out</a></li>  
+
     </ul>
     <a href="#" id="pull">Menu</a>
   </nav>
@@ -58,9 +54,3 @@
 
 </body>
 </html>
- 
-
-
-
-
-

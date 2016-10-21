@@ -5,11 +5,10 @@
  
 
 
-<h1 id="w"> Welcome <%=@b%></h1>
-
-
+<h3> User #<%=@b%></h3>
+<hr />
 <%if @b == @s.to_s%>
-<h1> Welcome <%=@user.username%></h1>
+<h1 id="signup_h1"> Welcome <%=@user.username%>!</h1>
 
 
 <form method = "POST" action="/micro" id="usrform">
@@ -19,6 +18,7 @@
 
 <textarea name="content"  form="usrform">Enter text here...</textarea>
 <%end%>
+<br />
 </h1>Your Posts</h1>
 <%if @all%>
 <%@all.each do |a| %>
@@ -32,12 +32,19 @@
 <%if @b == @s.to_s%>
 <div id="follo">
 <!-- <h1><%=@array%></h1> -->
-<h1>Posts of people you follow</h1>
+<h1>Posts of people you follow:</h1>
 <%fl = @m.flatten(1)%>
 <%fl.each do |o|%>
 
 <p class="con"><%=o.content + " " + o.category%></p>
 <%end%>
+
+</div>
+<div id="box">
+<img id="goal" src="<%= url('/goal.png') %>" />
+
+<p id ="c"></p>
+
 
 </div>
 <%end%>
@@ -49,15 +56,9 @@
 <%end%>
 
 
-<div id="box">
 
 
-<p id ="c"></p>
-
-
-</div>
-
-<button id="create">Create</button>
+<h1 id="create">Create</h1>
 
 <script type="text/javascript">
 var arr = [];
@@ -82,7 +83,7 @@ function alertme() {
 console.log($('#box').text())
 arr.push($('#box').text() + "ss");
 console.log(arr);
-$('#box').empty();
+$('#box').find('*').not('.#goal').remove();
 }
 
 $(document).ready(function() {

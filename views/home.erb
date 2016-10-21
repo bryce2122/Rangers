@@ -1,13 +1,16 @@
 
 <div id="home">
 
-<H1 id="main_title">Breakaway Blog</H1>
+<H1 class="main_title">Breakaway Blog</H1>
 
 <img class="logo" src="logo.jpg" />
- <h1>Signup</h1>
 
+
+  
+<div id="signup"> 
+<h1 id="signup_h1">Signup</h1>
   <form id= "s" method="POST" action="/sign">
-    <table>
+    <table id="info">
       <tr>
        <tr>
          <td><label for="username">Username</label></td>
@@ -27,10 +30,14 @@
   </form>
 
 <a href="/login"> Login </a>
+
   <%if flash[:update]%>
   <h1><%=flash[:update]%></h1>
   <%end%>
 
+
+
+</div>
 
 <script>
 var email = ""; 
