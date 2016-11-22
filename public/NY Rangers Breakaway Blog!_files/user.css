@@ -94,16 +94,6 @@ body {
 	margin: 0 auto;
 	box-shadow: 7px 7px 5px black;
 }
-
-.logo_sm {
-	border-radius: 50%;
-	height: 100px;
-	display: block;
-	float: right;
-	margin-right: 40px;
-	box-shadow: 5px 5px 3px black;
-}	
-
 nav {
 	height: 40px;
 	width: 100%;
@@ -161,12 +151,6 @@ nav a#pull {
 
 #signup_h1 {
 	color: red;
-	font-family: 'Audiowide', cursive;
-	text-shadow: 1px 1px black;
-}
-
-#flash_h1 {
-	color: #4169E1;
 	font-family: 'Audiowide', cursive;
 	text-shadow: 1px 1px black;
 }
@@ -254,10 +238,7 @@ height: 80px;
 
     width: 100px;
     position: relative;
-    z-index: -1;
     right: 275px;
-    clear: both;
-
 }
 
 body {

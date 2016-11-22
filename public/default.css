@@ -20,6 +20,21 @@
 
 /* Basic Styles */
 
+#create {
+
+
+	position: absolute;
+	left: 600px;
+}
+
+
+
+
+
+
+
+
+
 
 body {
 	background: URL("ice-background.jpg") no-repeat center center fixed;
@@ -158,6 +173,7 @@ nav a#pull {
 
 
 }
+
 
 .s{
 

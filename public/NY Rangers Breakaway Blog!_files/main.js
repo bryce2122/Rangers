@@ -1,92 +1,60 @@
-<link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NY Rangers Breakaway Blog!</title>
+
+  <!-- JS & JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+
+  <!-- STYLE -->
+<link rel="stylesheet" type="text/css" href="http://localhost:4567/user.css">
+
+  <!-- FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Russo+One" rel="stylesheet"> 
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/default.css">
+
+</head>
+<body>
+  <nav class="clearfix">
+    <ul class="clearfix">
+
+      <li><a href="/">Home</a></li>
+      <li><a href="/users/2"> View Profile</a></li>
+      <li><a href="/account">Account</a></li>
+      <li><a href="/feed">Feed</a></li>
+      <li><a href="/sample">Teammates</a></li>
+      <li><a href="/signout">Sign Out</a></li>  
+
+    </ul>
+    <a href="#" id="pull">Menu</a>
+  </nav>
+
+
+      
+  
+  <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="<%= url("/user.css")%>">
+<link rel="stylesheet" type="text/css" href="http://localhost:4567/user.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
  
 
 
-<h3> User #<%=@b%></h3>
-
-<%if @b == @s.to_s%>
-<h1 id="signup_h1"> Welcome <%=@user.username%>!</h1>
-
-<h1 id="m">Make a Post</h1>
-<form id="form" method = "POST" action="/micro" >
- 
-  <input id = "but" class="btn btn-default" type="submit">
-</form>
-
-<textarea id ="text" name="content"  form="form">Enter text here...</textarea>
-<hr id="yep" />
-
-
-<div class="row">
-<div class="col-sm-6">
-<div class="card">
-<h1 id="your">Your Posts</h1>
-<%if @all%>
-<ul id="listp" class="list-group list-group-flush">
-<%@all.each do |a| %>
-
-<li id="qw" class="list-group-item"><%=a.content%></li>
-
-<%end%>
-</ul>
-<%end%>
-</div>
-
-
-</div>
-
-<div class="col-sm-6">
-
-<div id="follo" class = "card">
-<!-- <h1><%=@array%></h1> -->
-<h1 id="pm">Posts of people you follow:</h1>
-<ul id=listc class="list-group list-group-flush">
-
-<%fl = @m.flatten(1)%>
-<%fl.each do |o|%>
-
-<li id="con" class="list-group-item"><%=o.content%></li>
-<%end%>
-</ul>
-</div>
-</div>
-</div>
+<h3> User #main.js</h3>
 
 
 
-
-
-
-
-
-<div id="box">
-<img id="goal" class="goal" src="<%= url('/basket.png') %>" />
-
-<p id ="c"></p>
-
-
-</div>
-<h1 id="create">Create</h1>
-<%end%>
-
-
-<%if @b != @s.to_s %>
 
 <div class="card">
 <h1 id="their">Their Posts</h1>
-<%if @all%>
 <ul id="listm" class="list-group list-group-flush">
-<%@all.each do |a| %>
-
-<li id="qw" class="list-group-item"><%=a.content%></li>
-
-<%end%>
 </ul>
-<%end%>
 </div>
 
 
@@ -94,8 +62,7 @@
 
 
 <button class="btn btn-default" id="f">Follow</button>
-<%=@f%>
-<%end%>
+
 
 
 
@@ -132,12 +99,12 @@ $(document).ready(function() {
 
 var ru = $("#w").text();
 
-
+alert(ru);
  var map = $(".con").map(function() {
     return $(this).text();
 });
 
-
+alert(map[0]);
 $("#f").click(function() {
 var a = window.location.href.split("/");
 var b = a[a.length - 1]
@@ -199,3 +166,8 @@ $.ajax({
 
 });
 </script>
+  
+
+
+</body>
+</html>
